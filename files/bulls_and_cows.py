@@ -54,20 +54,26 @@ class BullsAndCows():
 			i = 0
 			cows = 0
 			for s in secret:	# iterate through each digit in secret
+# 				print("current secret digit %d" % s)
 				if self.contains(guess,s):	# if digits exists in guess
+# 					print("digit match in guess %d" % s)
 					if s == guess[i]:	# if bull
+# 						print("it is a bull %d" % s)
 						cows -= 1
 						if guess.count(s) >= 2:	# if multiple counts of digit found
+# 							print("multiple digit count %d" % s)
 							if self.contains(guess[:i], s):
+# 								print("guess lower bound %d" % s)
 								cows += 1
 					cows += 1
+# 					print ("cow count %d" % cows)
 				i += 1
 		return cows	
 
 
 	def playBullsandCows(self, i):		# play method
 		secret = self.genSecretDigits(i)	# generate secret based on input seed
-		print secret
+# 		print secret
 		
 		print("Hey you! Wanna play Bulls & Cows?")
 		print("Let's get crackin!")
@@ -99,12 +105,18 @@ class BullsAndCows():
 			attempt += 1
 			
 		if guess == secret:
+			print("\n")
 			print("Congrats! You cracked the code in %d tries." % attempt)    
 		
 		
 def main():
 	bnc = BullsAndCows()
-	bnc.playBullsandCows(120)
-    
+	bnc.playBullsandCows(200)
+	# s = [5,1,9,6]
+# 	g = [9,9,9,9]
+# 	print("Bulls: %s" % bnc.getNumofBulls(s, g))
+# 	print(" Cows: %s" % bnc.getNumofCows(s, g))
+	
+	
 if __name__ == "__main__":
     main()
