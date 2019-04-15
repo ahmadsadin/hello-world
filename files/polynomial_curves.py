@@ -53,9 +53,9 @@ def drawCurve(coef, t, ch):
 			
 			
 def main():
-	curve_coef = [0.1, 1, -8]
-	thickness = 1.05
-	drawCurve(curve_coef, thickness, "o")
+	curve_coef = [-2, 12]
+	thickness = 0.5
+	drawCurve(curve_coef, thickness, "*")
 	
 	
 if __name__ == "__main__":
